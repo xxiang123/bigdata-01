@@ -1,18 +1,17 @@
 from matplotlib import pyplot as plt
 import myproject.myspark
+from matplotlib.font_manager import FontProperties
+font = FontProperties(fname='/usr/share/fonts/truetype/wqy/wqy-microhei.ttc')
 
 
-
-x=range(len(myproject.myspark.list_name))
-plt.bar(x,myproject.myspark.list_score,align='center')
-plt.xticks(x,myproject.myspark.list_name,rotation=45)
-'''
 x=myproject.myspark.list_name
 y=myproject.myspark.list_score
-plt.bar(list(x),list(y))
-'''
-plt.title('The show of movie score')
-plt.ylabel('score')
-plt.xlabel('movie name')
-plt.show()
 
+plt.figure(figsize=(9,5))
+plt.title('The show of movie score',fontproperties=font)
+plt.ylabel('score',fontproperties=font)
+plt.xlabel('score',fontproperties=font)
+plt.bar(list(x),list(y))
+plt.xticks(fontsize=6,fontproperties=font)
+
+plt.show()
